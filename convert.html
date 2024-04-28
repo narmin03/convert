@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const rubInput = document.getElementById('rubInput');
+
+      const usdInput = document.getElementById('usdInput');
+
+      rubInput.addEventListener('input', function () {
+        const rubValue = parseFloat(this.value);
+
+        if (isNaN(rubValue) || rubValue <= 0) {
+          usdInput.value = '';
+          return;
+        }
+
+        // USD dəyəri RUB-dan çevrilir (məsələn, bir rubl 0.014 USD edir)
+        const usdValue = rubValue * 0.014;
+
+        usdInput.value = usdValue.toFixed(2);
+      });
+
+      usdInput.addEventListener('input', function () {
+        const usdValue = parseFloat(this.value);
+
+        if (isNaN(usdValue) || usdValue <= 0) {
+          rubInput.value = '';
+          return;
+        }
+
+        const rubValue = usdValue / 0.014;
+
+        rubInput.value = rubValue.toFixed(2);
+      });
+    });
+
+
+
+  </script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background-color: gray;
+      padding: 20px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 800px;
+      height: 50px;
+      gap: 0px;
+      opacity: 0px;
+      background: rgba(245, 245, 246, 1);
+
+    }
+
+    .logo h1 {
+      color: #fff;
+      margin: 0;
+
+
+
+    }
+
+    .nav-links {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      margin-left: 20px;
+
+
+
+
+    }
+
+    .nav-links li {
+      margin-right: 20px;
+
+    }
+
+    .nav-links li:last-child {
+      margin-right: 20px;
+    }
+
+    .nav-links a {
+      color: rgba(149, 155, 164, 1);
+
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .bank {
+      width: 44px;
+      height: 19px;
+      top: 17px;
+      left: 253px;
+      gap: 0px;
+      opacity: 0px;
+      font-family: Roboto;
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 12.89px;
+      letter-spacing: 0.06em;
+      text-align: left;
+    }
+
+    .business {
+      width: 50px;
+      height: 19px;
+      top: 17px;
+      left: 310px;
+      gap: 0px;
+      opacity: 0px;
+      font-family: Roboto;
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 12.89px;
+      letter-spacing: 0.06em;
+      text-align: left;
+    }
+
+    .image {
+      background-color: transparent;
+      width: 89px;
+      height: 23px;
+      top: 15px;
+      left: 100px;
+      gap: 0px;
+      opacity: 1;
+    }
+
+
+    .invest {
+      width: 94px;
+      height: 19px;
+      top: 17px;
+      left: 381px;
+      gap: 0px;
+      opacity: 0px;
+      font-family: Roboto;
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 12.89px;
+      letter-spacing: 0.06em;
+      text-align: left;
+    }
+
+    .stra {
+      width: 94px;
+      height: 19px;
+      top: 17px;
+      left: 486px;
+      gap: 0px;
+      opacity: 0px;
+      font-family: Roboto;
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 12.89px;
+      letter-spacing: 0.06em;
+      text-align: left;
+    }
+
+    .mobile {
+      width: 68px;
+      height: 19px;
+      top: 17px;
+      left: 596px;
+      gap: 0px;
+      opacity: 0px;
+      font-family: Roboto;
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 12.89px;
+      letter-spacing: 0.06em;
+      text-align: left;
+    }
+
+    .put {
+      width: 101px;
+      height: 19px;
+      top: 17px;
+      left: 671px;
+      gap: 0px;
+      opacity: 0px;
+      font-family: Roboto;
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 12.89px;
+      letter-spacing: 0.06em;
+      text-align: left;
+    }
+
+    .book {
+      width: 101px;
+      height: 19px;
+      top: 17px;
+      left: 782px;
+      gap: 0px;
+      opacity: 0px;
+      font-family: Roboto;
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 12.89px;
+      letter-spacing: 0.06em;
+      text-align: left;
+    }
+
+    .btn {
+      width: 58px;
+      height: 33px;
+      top: 9px;
+      left: 992px;
+      gap: 0px;
+      opacity: 0px;
+      font-family: Roboto;
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 12.89px;
+      letter-spacing: 0.06em;
+      text-align: center;
+      background: white;
+    }
+
+    .nav-links li.bank a {
+      color: #000;
+      font-weight: bold;
+    }
+
+    .h1 {
+      width: 587px;
+      height: 32px;
+      top: 106px;
+      left: 253px;
+      gap: 0px;
+      opacity: 0px;
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 42.19px;
+      text-align: left;
+      color: rgba(0, 0, 0, 1);
+      margin-left: 200px;
+    }
+
+    .layout {
+      display: flex;
+      width: 900px;
+      height: 30px;
+      top: 200px;
+      left: 100px;
+      gap: 10px;
+    }
+
+    .invest,
+    .stra,
+    .mobile,
+    .put,
+    .book {
+      width: 25%;
+      height: 19px;
+      gap: 0px;
+      opacity: 0px;
+      font-family: Roboto;
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 12.89px;
+      letter-spacing: 0.06em;
+      text-align: left;
+    }
+
+    .layout {
+      display: flex;
+      width: 259px;
+      height: 30px;
+      top: 200px;
+      left: 130px;
+      gap: 0px;
+      border-radius: 3px 0px 0px 3px;
+      border: 1px 0px 0px 0px;
+      opacity: 0px;
+    }
+
+    .box {
+      flex: 1;
+      border: 1px solid #ccc;
+    }
+
+    .currency {
+      padding: 10px;
+      width: 63.81px;
+      height: 28px;
+      top: 201px;
+      left: 254.25px;
+      gap: 0px;
+      opacity: 0px;
+      font-family: Roboto;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 14.06px;
+      text-align: center;
+      color: rgba(255, 255, 255, 1);
+
+    }
+
+    .layout .box {
+      flex: 1;
+      border: 1px solid #ccc;
+      position: relative;
+    }
+
+    .RUB {
+
+      width: 65.06px;
+      height: 10px;
+      top: 200px;
+      left: 253px;
+      border-radius: 3px 0px 0px 3px;
+      opacity: 0px;
+      background-clip: content-box;
+      background: rgba(131, 58, 224, 1);
+
+      color: black;
+
+
+
+
+    }
+
+    .USD {
+      color: rgba(198, 198, 198, 1);
+      width: 62.56px;
+      height: 28px;
+      top: 201px;
+      left: 319.31px;
+      gap: 0px;
+      opacity: 0px;
+      font-family: Roboto;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 14.06px;
+      text-align: center;
+
+    }
+
+    .EUR {
+      width: 62.56px;
+      height: 28px;
+      top: 201px;
+      left: 383.13px;
+      gap: 0px;
+      opacity: 0px;
+      font-family: Roboto;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 14.06px;
+      text-align: center;
+      color: rgba(198, 198, 198, 1);
+
+    }
+
+    .GBP {
+      width: 62.56px;
+      height: 28px;
+      top: 201px;
+      left: 448.19px;
+      gap: 0px;
+      opacity: 0px;
+      font-family: Roboto;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 14.06px;
+      text-align: center;
+      color: rgba(198, 198, 198, 1);
+
+    }
+
+
+    .JPY {
+
+      width: 259px;
+      height: 102px;
+      top: 450px;
+      left: 260px;
+      gap: 0px;
+      border-radius: 3px 0px 0px 0px;
+      border: 1px 0px 0px 0px;
+      opacity: 0px;
+      border: 1px solid rgba(229, 229, 229, 1);
+    }
+
+    .jpy-box {
+      margin-left: 100px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+
+
+
+    .box {
+
+      display: flex;
+
+
+    }
+
+
+    .currency:last-child {
+      border-right: none;
+    }
+
+    .currency {
+      flex: 1;
+      padding: 10px;
+      height: 28px;
+      opacity: 1;
+      font-family: Roboto;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 7px;
+      text-align: center;
+      border-right: 1px solid #ccc;
+      box-sizing: border-box;
+      margin-left: 20px;
+
+    }
+
+    .currency-inputs {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .input-field1 {
+      width: 300px;
+      height: 102px;
+      margin-top: 25px;
+      margin-left: 25px;
+      gap: 0px;
+      border-radius: 3px 0px 0px 0px;
+      border: 1px 0px 0px 0px;
+      opacity: 0px;
+      border: 1px solid rgba(229, 229, 229, 1) box-sizing: border-box;
+      margin-right: 10px;
+      background-color: #rgba(229, 229, 229, 1);
+    }
+
+    .input-field2 {
+      width: 350px;
+      height: 102px;
+      margin-top: 25px;
+      margin-left: 25px;
+      gap: 0px;
+      border-radius: 3px 0px 0px 0px;
+      border: 1px 0px 0px 0px;
+      opacity: 0px;
+      border: 1px solid rgba(229, 229, 229, 1) box-sizing: border-box;
+      margin-right: 580px;
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="logo">
+      <img
+        style="display: block;-webkit-user-select: none;margin: auto;cursor: zoom-in;background-color: hsl(0, 0%, 90%);transition: background-color 300ms;"
+        src="https://s3-alpha-sig.figma.com/img/5e85/ba7e/2220b03c0726ae6807b6de824e538e46?Expires=1714953600&amp;Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&amp;Signature=YxL5OfE2ome1L61uoAOD5qtItDcO1Ygi~kFpopLCTEtsfJynryv-GHXBg9pA-GZpoM79fRpg7xQVZkGrhAXpeoUIH1U495qV-024ltEVRIi49eprVQwwMuc~w968XzUDQ-nX45S3MSWvyrTMiq~idNSDhH03EXUqf~TjfwOnyR9fPdrjnvTMbIVtsBnKJ2jMtGgB~6BcAdU3z2cRRKAkDJYOTV1WzmID4ZaRRksmWTSMFipvVPa0Q7dxl4IubvpmocEWfwtlh2iVSwp1bmQkczGGtHcn-wUbA788AEN7XIXRoksT1QygoQ7LUMoSUnrcBMmSZ1CCEm0XIGlD3VhY3Q__"
+        class="image">
+    </div>
+    <ul class="nav-links">
+      <li class="bank"><a href="#">БАНК</a></li>
+      <li class="business"><a href="#">БИЗНЕС</a></li>
+      <li class="invest"><a href="#">ИНВЕСТИЦИИ</a></li>
+      <li class="stra"><a href="#">СТРАХОВАНИЕ</a></li>
+      <li class="mobile"><a href="#">МОБАЙЛ</a></li>
+      <li class="put"><a href="#">ПУТЕШЕСТВИЯ</a></li>
+      <li class="book"><a href="#">РАЗВЛЕЧЕНИЯ</a></li>
+
+
+    </ul>
+    <button class="btn">ВОЙТИ</button>
+
+  </nav>
+  <h1 class="h1">Конвертер валют онлайн</h1>
+  <div class="layout">
+    <div class="box">
+      <div class="currency RUB">RUB</div>
+    </div>
+    <div class="box">
+      <div class="currency USD">USD</div>
+    </div>
+    <div class="box">
+      <div class="currency EUR">EUR</div>
+    </div>
+    <div class="box">
+      <div class="currency GBP">GBP</div>
+
+    </div>
+
+    <div class="box jpy-box">
+      <div class="currency RUB">RUB</div>
+      <div class="currency USD">USD</div>
+      <div class="currency EUR">EUR</div>
+      <div class="currency GBP">GBP</div>
+    </div>
+
+  </div>
+  <div class="currency-inputs">
+    <input type="text" id="rubInput" class="input-field1" placeholder="1 RUB = 0.0135 USD">
+    <input type="text" id="usdInput" class="input-field2" placeholder="1 USD = 73.8896 RUB">
+
+  </div>
+
+
+
+</body>
+
+</html>
